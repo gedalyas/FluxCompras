@@ -1,0 +1,176 @@
+:root{
+  --bg: #0b0d10;
+  --panel: #101419;
+  --panel-2: #0e1217;
+  --text: #e7ecf3;
+  --text-muted: #9aa7b6;
+  --border: #1b222c;
+  --grid: #1a2028;
+  --brand-300: #63b3ff;
+  --brand-400: #4aa1ff;
+  --brand-500: #2f8cff;
+  --brand-600: #1f6fd9;
+  --tooltip-bg: #0f141b;
+  --shadow-sm: 0 4px 16px rgba(0,0,0,.25);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #f7f9fc;
+    --panel: #ffffff;
+    --panel-2: #fafcff;
+    --text: #0b1621;
+    --text-muted: #516173;
+    --border: #e7edf3;
+    --grid: #e9eef5;
+    --brand-300: #7bb7ff;
+    --brand-400: #509cff;
+    --brand-500: #357eff;
+    --brand-600: #2a69e6;
+    --tooltip-bg: #ffffff;
+    --shadow-sm: 0 6px 18px rgba(14,38,74,.08);
+    --shadow-md: 0 18px 40px rgba(14,38,74,.12);
+  }
+}
+
+*{ box-sizing:border-box; }
+html,body,#root{ height:100%; }
+body{
+  margin:0;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(53,126,255,.15), transparent 50%),
+              radial-gradient(900px 500px at 90% -20%, rgba(80,156,255,.12), transparent 40%),
+              var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 18px 80px;
+}
+
+.page-header{
+  display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+  margin-bottom: 14px;
+}
+
+.title{
+  margin:0;
+  font-size: 28px;
+  letter-spacing:.2px;
+  line-height:1.15;
+  background: linear-gradient(90deg, var(--text) 0%, var(--brand-300) 60%, var(--text) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.muted{ color:var(--text-muted); margin:6px 0 0; }
+
+.grid{
+  display:grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:14px; margin: 14px 0 18px;
+}
+@media (max-width: 720px){ .grid{ grid-template-columns: 1fr; } }
+
+.card{
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 14px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover{ transform: translateY(-1px); box-shadow: var(--shadow-md); border-color: color-mix(in oklab, var(--border), var(--brand-500) 12%); }
+
+.card-head{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  margin-bottom: 10px;
+}
+
+.card-title{
+  margin:0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing:.2px;
+  color: var(--text);
+}
+
+.kpi{ display:flex; align-items:center; justify-content:space-between; padding:18px; }
+.kpi-label{ color:var(--text-muted); font-size:13px; letter-spacing:.3px; text-transform:uppercase; }
+.kpi-value{ font-size:28px; font-weight:800; color:var(--brand-400); }
+
+.controls{ display:flex; align-items:center; gap:10px; }
+.label{ color:var(--text-muted); font-size:13px; }
+.select{
+  appearance:none;
+  background: var(--panel-2);
+  color: var(--text);
+  border:1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  outline:none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.select:hover{ border-color: color-mix(in oklab, var(--border), var(--brand-500) 25%); }
+.select:focus{ border-color: var(--brand-500); box-shadow: 0 0 0 3px color-mix(in oklab, transparent, var(--brand-500) 30%); }
+
+.chart{
+  height: 360px;
+}
+.chart.small{
+  height: 300px;
+}
+
+/* ---------- Tabela bonita ---------- */
+.table-wrap{
+  overflow:auto;
+  border-radius: 12px;
+  border:1px solid var(--border);
+}
+
+.table{
+  width:100%;
+  border-collapse: separate;
+  border-spacing:0;
+  min-width: 640px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+}
+
+.table thead th{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--panel), #000 4%), var(--panel));
+  color: var(--text);
+  text-align:left;
+  padding: 10px 12px;
+  font-size: 13px;
+  letter-spacing:.3px;
+  border-bottom:1px solid var(--border);
+}
+
+.table tbody td{
+  padding: 10px 12px;
+  border-bottom:1px solid var(--border);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.table tbody tr:nth-child(odd) td{
+  background: color-mix(in oklab, var(--panel-2), #ffffff 4%);
+}
+.table tbody tr:hover td{
+  background: color-mix(in oklab, var(--panel-2), var(--brand-500) 8%);
+}
+
+/* Recharts overrides via CSS variables */
+.recharts-default-tooltip{
+  border-radius:10px !important;
+  box-shadow: var(--shadow-sm) !important;
+}

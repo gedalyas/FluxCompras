@@ -1,0 +1,23 @@
+{
+  "column_map": {
+    "cod": "Cód",
+    "date": "Data Atual.",
+    "op": "Op.",
+    "nf": "Nota Fiscal",
+    "serie": "Série",
+    "qty": "Qtde",
+    "value": "Valor",
+    "stock": "Estoque",
+    "party": "Cliente/Fornecedor",
+    "history": "Histórico"
+  },
+  "op_codes": {
+    "VENDA": 7,
+    "COMPRA": 1,
+    "AJUSTE_MAIS": 4,
+    "AJUSTE_MENOS": 10,
+    "DEVOLUCAO_EMPRESA": 3
+  },
+  "sales_sum_mode": "abs", 
+  "dayfirst": true
+}
