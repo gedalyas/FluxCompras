@@ -9,7 +9,7 @@ export default function NavBar() {
     { to: '/estatistica', label: 'Estatística' },
     { to: '/analise', label: 'Análise' },
     { to: '/procurador', label: 'Procurador de preços' },
-    {to: '/noticias', label: 'Noticias do meu mercado'},
+    {to: '/pesquisa', label: 'Noticias do meu mercado'},
   ]
 
   const isActive = (to) => {

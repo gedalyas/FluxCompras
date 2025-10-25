@@ -5,7 +5,7 @@ import Estatistica from './pages/Estatistica'
 import Analise from './pages/Analise'
 import { DataProvider } from './store/DataContext'
 import ProcuraPreço from './pages/ProcuraPreço'
-import Noticias from './pages/Noticias'
+import Pesquisa from './pages/Pesquisa'
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
           <Route path="/estatistica" element={<Estatistica />} />
           <Route path="/analise" element={<Analise />} />
           <Route path="/procurador" element={<ProcuraPreço />} />
-          <Route path="/noticias" element={<Noticias/>} />
+          <Route path="/pesquisa" element={<Pesquisa/>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </DataProvider>
