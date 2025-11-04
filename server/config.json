@@ -16,7 +16,8 @@
     "COMPRA": 1,
     "AJUSTE_MAIS": 4,
     "AJUSTE_MENOS": 10,
-    "DEVOLUCAO_EMPRESA": 3
+    "DEVOLUCAO_EMPRESA": 3,
+    "DEVOLUCAO_FORNECEDOR": 9
   },
   "sales_sum_mode": "abs", 
   "dayfirst": true

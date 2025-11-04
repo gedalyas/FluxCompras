@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { pesquisar } from '../api/n8n';
+import { pesquisar } from '../api/conexao';
 
 const JANELAS = [
   { label: '7 dias', value: 'd7' },

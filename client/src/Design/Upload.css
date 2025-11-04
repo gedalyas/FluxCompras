@@ -68,6 +68,12 @@
   box-shadow: var(--upl-shadow);
   padding: 16px;
 }
+.upload-page .aesthetic-card {
+  border: 1px solid #e5e7eb;
+  background:
+    radial-gradient(1200px 1200px at 100% -30%, #eef2ff 0%, transparent 40%),
+    #ffffff;
+}
 .upload-page .table-card {
   margin-top: 12px;
   background: var(--upl-panel);
@@ -78,7 +84,78 @@
 
 /* Form */
 .upload-page .form-row { display: grid; gap: 8px; margin-bottom: 12px; }
-.upload-page .label { font-size: 14px; color: var(--upl-muted); }
+.upload-page .two-col {
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 720px) {
+  .upload-page .two-col { grid-template-columns: 1fr; }
+}
+
+.upload-page .label { font-size: 14px; color: var(--upl-muted); margin-bottom: 6px; display: inline-block; }
+
+.upload-page .input-group {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .06s ease;
+}
+.upload-page .input-group:hover {
+  border-color: #cbd5e1;
+}
+.upload-page .input-group:focus-within {
+  border-color: #c7d2fe;
+  box-shadow: 0 0 0 4px rgba(99,102,241,.15);
+}
+
+.upload-page .icon-left {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  color: #64748b;
+}
+.upload-page .prefix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  height: 28px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #111827;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+.upload-page .text-input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  padding: 6px 4px;
+  background: transparent;
+  color: var(--upl-text);
+  font-size: 15px;
+}
+.upload-page .text-input::placeholder { color: #9ca3af; }
+.upload-page .has-icon-left { padding-left: 2px; }
+.upload-page .has-prefix { padding-left: 2px; }
+
+.upload-page .input-group.needs-value {
+  border-color: #fed7aa;
+  background: #fff7ed;
+}
+.upload-page .helper {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--upl-muted);
+}
+.upload-page .helper.warn { color: #b45309; }
+
+/* File input */
 .upload-page .file-input {
   padding: 10px 12px;
   background: #fff;
